@@ -33,7 +33,7 @@ public class App {
         
         try {
         	
-        	Color c = colorDA0 .getColorById(5);
+        	Color c = colorDA0.getColorById(5);
         	
         	if(c != null) {
         		System.out.println(c.toString());
