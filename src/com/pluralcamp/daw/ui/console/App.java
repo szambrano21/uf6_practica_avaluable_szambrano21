@@ -28,12 +28,12 @@ public class App {
         System.out.println("Hello JDBC");
         Scanner stdin = new Scanner (System.in);
         
-        ColorDAOJDBCImpl colorDAO = new ColorDAOJDBCImpl();
-        EventDAOJDBCImpl eventDAO = new EventDAOJDBCImpl();
+        ColorDAOJDBCImpl colorDAOJDBC = new ColorDAOJDBCImpl();
+        EventDAOJDBCImpl eventDAOJDBC = new EventDAOJDBCImpl();
         
         try {
         	
-        	Color c = colorDA0.getColorById(5);
+        	Color c = colorDAOJDBC.getColorById(5);
         	
         	if(c != null) {
         		System.out.println(c.toString());
@@ -46,7 +46,7 @@ public class App {
         stdin.nextLine();
         
         try {
-        	List<Color> colors = colorDAO.getColors();
+        	List<Color> colors = colorDAOJDBC.getColors();
         	for (Color c : colors){
         		System.out.println(c.toString());
         	}
@@ -58,7 +58,7 @@ public class App {
         stdin.nextLine();
         
         try {
-        	Event e = eventDAO.getEventById(5);
+        	Event e = eventDAOJDBC.getEventById(5);
         	if (e != null) {
         		System.out.println(e.toString());
         	}
@@ -70,7 +70,7 @@ public class App {
         stdin.nextLine();
         
         try {
-        	List<Event> events = eventDAO.getEvents();
+        	List<Event> events = eventDAOJDBC.getEvents();
         	for (Event e : events) {
         		System.out.println(e.toString());
         	}

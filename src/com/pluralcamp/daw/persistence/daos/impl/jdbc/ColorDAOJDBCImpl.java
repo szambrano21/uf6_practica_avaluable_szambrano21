@@ -30,7 +30,7 @@ public class ColorDAOJDBCImpl implements ColorDAO {
     	//ResultSet reader = null;
     	Color color = null;
     	
-    	try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/calendar?serverTimezone=Europe/Paris","root","admin");
+    	try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/calendar?serverTimezone=Europe/Paris","sara","admin");
         	PreparedStatement sentSQL = connection.prepareStatement("SELECT id, name, red, green, blue FROM calendar.colors WHERE id = ?");
 			) {
     		//connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/calendar?serverTimezone=Europe/Paris","root","admin");
@@ -58,8 +58,8 @@ public class ColorDAOJDBCImpl implements ColorDAO {
     public List<Color> getColors() throws DAOException {
     	//dame todas las filas de la tabla colores
     	List<Color> colors = new ArrayList<>();
-    	try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/calendar?serverTimezone=Europe/Paris","root","admin");
-            PreparedStatement sentSQL = connection.prepareStatement("SELECT id, name, red, green, blue FROM calendar.colors WHERE id = ?");
+    	try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/calendar?serverTimezone=Europe/Paris","sara","admin");
+            PreparedStatement sentSQL = connection.prepareStatement("SELECT id, name, red, green, blue FROM calendar.colors");
     		ResultSet reader = sentSQL.executeQuery()	) {
         		
     		
